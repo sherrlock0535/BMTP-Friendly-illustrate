@@ -41,4 +41,47 @@ INPUT end
 ```
 理论上可以计算到1000000位，但时间大盖要一个月。
 SET digit 为设置精度，默认为100，最大为100000。
+
+### 数组
+使用`VAR array name`可以定义名字为`name`的数组，初始长度默认为1。数组会自动扩大至已赋值的最大位。没赋值的位初始值为`0`。如果越位读取会报错。
+
+#### 示例
+```
+VAR array a
+a_10=10
+PRINT a_5 '此处将输出0 
+```
+SET numbertype int64
+2 INPUT " 输 入 筛 选 范 围 n";n
+3 VAR array valid
+4 VAR array ans
+5 i=2
+6 tot=0
+7 WHILE i<=n
+8 valid_i=1
+9 i=i+1
+10 WEND
+60《数学 3》中的程序设计语言的解释器的实现
+B 解释器源代码
+11 i=2
+12 WHILE i<=n
+13 IF valid_i=1 THEN
+14 ans_tot=i
+15 tot=tot+1
+16 END IF
+17 j=0
+18 WHILE j<tot AND i * ans_j <=n
+19 valid_(i * ans_j)=0
+20 IF i MOD ans_j=0 THEN
+' 终 止 循 环
+j=tot
+21
+22 END IF
+23 j=j+1
+24 WEND
+25 i=i+1
+26 WEND
+27 PRINT " 小 于 n 的 质 数 为 : \n";ans
+28 END
+```
 ### 本项目将持续更新！
