@@ -51,6 +51,8 @@ VAR array a
 a_10=10
 PRINT a_5 '此处将输出0 
 ```
+
+```
 SET numbertype int64
 2 INPUT " 输 入 筛 选 范 围 n";n
 3 VAR array valid
