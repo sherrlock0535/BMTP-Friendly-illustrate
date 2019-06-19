@@ -16,9 +16,10 @@ BMTP语言是一门高级语言，计算机无法读懂高级语言，所以需�
 ```
 INPUT a
 INPUT b
-c=MAX(a,b)
+c=MAX(a,b)'MAX(a,b)=a和b中的最大值
 PRINT c
 ```
+'为注释符号，它后面的所有东西（到该行行末）不会被执行。
 然后把这个文件拖到`bmtp.exe`里，也就是我们的解释器。接下来会有一个小黑板，你输入第一个数字，按回车，然后输入第二个数字，它就会输出两个数字中较大的一个。什么，你说它闪退了？这是因为计算机计算地太快，~~肉眼无法捕捉到计算结果~~（在后续版本我们会添加程序暂停功能的！！）。建议在程序最后一行添加一个输入，以暂停程序。
 例如`INPUT end`
 这里面a，b，c都是变量，必修三数学书上有详细的说明，这里就不再补充了。
@@ -43,7 +44,7 @@ INPUT end
 SET digit 为设置精度，默认为100，最大为100000。
 
 ### 数组
-使用`VAR array name`可以定义名字为`name`的数组，初始长度默认为1。数组会自动扩大至已赋值的最大位。没赋值的位初始值为`0`。如果越位读取会报错。
+使用`VAR array name`可以定义名字为`name`的数组，初始长度默认为1。使用`name_i`可以读取数组的第i位。数组会自动扩大至已赋值的最大位。没赋值的位初始值为`0`。如果越位读取会报错。
 
 #### 示例
 ```
@@ -51,39 +52,35 @@ VAR array a
 a_10=10
 PRINT a_5 '此处将输出0 
 ```
-
+#### 筛素数
 ```
 SET numbertype int64
-2 INPUT " 输 入 筛 选 范 围 n";n
-3 VAR array valid
-4 VAR array ans
-5 i=2
-6 tot=0
-7 WHILE i<=n
-8 valid_i=1
-9 i=i+1
-10 WEND
-60《数学 3》中的程序设计语言的解释器的实现
-B 解释器源代码
-11 i=2
-12 WHILE i<=n
-13 IF valid_i=1 THEN
-14 ans_tot=i
-15 tot=tot+1
-16 END IF
-17 j=0
-18 WHILE j<tot AND i * ans_j <=n
-19 valid_(i * ans_j)=0
-20 IF i MOD ans_j=0 THEN
-' 终 止 循 环
-j=tot
-21
-22 END IF
-23 j=j+1
-24 WEND
-25 i=i+1
-26 WEND
-27 PRINT " 小 于 n 的 质 数 为 : \n";ans
-28 END
+INPUT " 输 入 筛 选 范 围 n";n
+VAR array valid
+VAR array ans
+i=2
+tot=0
+WHILE i<=n
+  valid_i=1
+  i=i+1
+WEND
+i=2
+WHILE i<=n
+IF valid_i=1 THEN
+  ans_tot=i
+  tot=tot+1
+END IF
+j=0
+WHILE j<tot AND i * ans_j <=n
+  valid_(i * ans_j)=0
+  IF i MOD ans_j=0 THEN
+    j=tot
+  END IF
+  j=j+1
+  WEND
+  i=i+1
+WEND
+PRINT " 小 于 n 的 质 数 为 : \n";ans
+END
 ```
 ### 本项目将持续更新！
