@@ -9,7 +9,9 @@ BMTP语言，全称“BASIC in Mathematics Textbook of PEP”，中文全称“�
 [64位版本下载](https://github.com/BMTP-language/BMTP/raw/master/v1.0.0/compiled/visual_studio/Release/x64/bmtp.exe)  [32位版本下载](https://github.com/BMTP-language/BMTP/raw/master/v1.0.0/compiled/visual_studio/Release/x86/bmtp.exe)
 
 这两个是使用visual_studio编译器编译的可执行文件，兼容性比较强，如果不兼容可以自行下载源码编译。
-[源码链接]（https://github.com/BMTP-language/BMTP）
+
+[源码链接](https://github.com/BMTP-language/BMTP)
+
 ## 使用方法
 BMTP语言是一门高级语言，计算机无法读懂高级语言，所以需要解释器来把高级语言翻译给计算机（也就是翻译成一堆0和1）。刚才我们下载的东西叫“解释器”，它用来解释我们写的程序。使用方法就是很简单的，把程序交给解释器。
 #### 示例
